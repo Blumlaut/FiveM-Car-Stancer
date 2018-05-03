@@ -215,12 +215,12 @@ Citizen.CreateThread(function()
 		local finished = false -- FindNextPed will turn the first variable to false when it fails to find another ped in the index
 		repeat
 			Wait(0)
-			if theVeh ~= 0 and DoesEntityExist(theVeh) and DecorGetInt(theVeh, "ls_stanceFront") and theVeh ~= GetVehiclePedIsIn(PlayerPedId(), false) then
+			if theVeh ~= 0 and DoesEntityExist(theVeh) and DecorGetInt(theVeh, "ls_stanceFront") and DecorGetInt(theVeh, "ls_stanceFront") ~= 0 and theVeh ~= GetVehiclePedIsIn(PlayerPedId(), false) then
 				ApplyVehicleSetup(theVeh,DecorGetInt(theVeh, "ls_stanceFront"),DecorGetInt(theVeh, "ls_stanceBack"),DecorGetInt(theVeh, "ls_offsetFront"),DecorGetInt(theVeh, "ls_offsetBack"),DecorGetInt(theVeh, "ls_lowering"))
 			end
 			finished, theVeh = FindNextVehicle(handle) -- first param returns true while entities are found
 			Wait(0)
-			if theVeh ~= 0 and DoesEntityExist(theVeh) and DecorGetInt(theVeh, "ls_stanceFront") and theVeh ~= GetVehiclePedIsIn(PlayerPedId(), false) then
+			if theVeh ~= 0 and DoesEntityExist(theVeh) and DecorGetInt(theVeh, "ls_stanceFront") and DecorGetInt(theVeh, "ls_stanceFront") ~= 0 and theVeh ~= GetVehiclePedIsIn(PlayerPedId(), false) then
 				ApplyVehicleSetup(theVeh,DecorGetInt(theVeh, "ls_stanceFront"),DecorGetInt(theVeh, "ls_stanceBack"),DecorGetInt(theVeh, "ls_offsetFront"),DecorGetInt(theVeh, "ls_offsetBack"),DecorGetInt(theVeh, "ls_lowering"))
 			end
 		until not finished
