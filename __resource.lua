@@ -4,5 +4,5 @@ dependency 'NativeUI'
 
 client_scripts { 
 	'@NativeUI/NativeUI.lua',
-	'lambda.lua',
+	'stancer.lua',
 }
